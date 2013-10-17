@@ -11,14 +11,16 @@ public class StringGenerator implements ValueGenerator<String> {
 
     
     private final String name;
+    private final int length;
 
-    public StringGenerator(String name) {
+    public StringGenerator(String name, int length) {
         this.name = name;
+        this.length = length;
     }
 
     public String generate(Writer output) throws GeneratorException {
         try {
-            output.write(RandomStringUtils.randomAlphabetic(10));
+            output.write(RandomStringUtils.randomAlphabetic(length));
         } catch (IOException e) {
             throw new GeneratorException(e);
         }

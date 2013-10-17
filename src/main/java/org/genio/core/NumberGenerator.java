@@ -19,7 +19,7 @@ public class NumberGenerator implements ValueGenerator<Long> {
     }
 
     public Long generate(Writer output) throws GeneratorException {
-        long number = minimum + (long)(Math.random() * ((maximum - minimum) + 1));
+        long number = RangeUtil.generate(minimum, maximum);
         try {
             output.write("" + number);
         } catch (IOException e) {

@@ -29,13 +29,14 @@ public class RangeGenerator<T> implements ValueGenerator<T> {
         Random random = new Random();
         int index = random.nextInt(values.size());
 
+        T value = values.get(index);
         try {
-            output.write(values.get(index).toString());
+            output.write(value.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return value;
     }
 
     public String getName() {

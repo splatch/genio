@@ -76,7 +76,7 @@ public class CsvOutput implements Output<ValueGenerator<?>> {
 
         CompositeGenerator<ValueGenerator<?>> generator = new DefaultCompositeGenerator(
             new SequenceGenerator("id"),
-            new StringGenerator("foo"),
+            new StringGenerator("adslid", 10),
             new MsisdnGenerator("msisdn", 100000000L, 999999999L),
             new RangeGenerator<Long>("imei", imei),
             new RangeGenerator<String>("direction", "IN", "OUT")
